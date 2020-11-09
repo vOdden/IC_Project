@@ -1,0 +1,53 @@
+
+\documentclass{article}
+
+% Importing settings from our file "setup.sty"
+\usepackage{setup}
+
+\usepackage{listings}
+
+
+
+% Beginning of document
+\begin{document}
+
+% Inserting title page
+\import{./}{title}
+
+% Defining front matter settings (Norsk: innstillinger for forord m.m.)
+\frontmatter
+
+% Inserting table of contents
+\tableofcontents
+
+% Inserting list of figures & list of tables
+\listoffigures
+
+% Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
+\mainmatter
+
+\import{./Sections/}{Abbreviations}
+\import{./Sections/}{Introduction}
+\import{./Sections/}{Theory}
+% Introduction explaining this LaTeX-template
+
+%   Example section added from an external tex-file, here located in ./Sections/
+%   \import{./Sections/}{Example_section}
+\import{./Sections/}{Analog}
+\import{./Sections/}{Digital}
+\import{./Sections/}{Results}
+% Example section added directly into the main-file
+
+\import{./Sections/}{Conclusion}
+
+\import{./Sections/}{Appendix}
+
+% Inserting appendix with separate settings
+\addappendix
+%\section{Baseline solution}
+%\input{Appendices/Baseline}
+%\section{Interrupt solution EM1}
+%\section{Interrupt solution EM2}
+%\input{Appendices/Interrupt}
+% End of document
+\end{document}
