@@ -1,0 +1,35 @@
+[aimspice]
+[description]
+430
+* One pixel simulation
+
+.include C:\Users\sigur\OneDrive\Skrivebord\DIC_Project\p18_cmos_models_tt.inc
+.include C:\Users\sigur\OneDrive\Skrivebord\DIC_Project\Parameters.cir
+.include C:\Users\sigur\OneDrive\Skrivebord\DIC_Project\PhotoDiode.cir
+
+
+xphoto 1 N1 PhotoDiode
+MN1 N1 exposen N2 0 NMOS L=L1 W=W1
+MN2 N2 erasen 0 0 NMOS L=L2 W=W2
+CS N2 0 CSvalue
+
+.connect erasen ERASE
+.connect EXPOSE exposen
+
+
+.plot v(N2)
+[dc]
+1
+VDD
+0
+1
+0.01
+[tran]
+0.001
+1
+X
+X
+0
+[ana]
+1 0
+[end]
